@@ -1,0 +1,24 @@
+{
+  "name": "js-obvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js Tom 26"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egor-Voronov/node-js-obvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Egor-Voronov/node-js-obvp/issues"
+  },
+  "homepage": "https://github.com/Egor-Voronov/node-js-obvp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
