@@ -1,11 +1,17 @@
-const fs = require("fs");
+const EventEmitter = require("events");
 
-fs.appendFileSync("hello.txt", "Привет ми ми ми!");
+let eventName = "greet";
 
-fs.appendFile("hello.txt", "Привет МИД!", function(error){
-    if(error) throw error; // если возникла ошибка
+class User extends EventEmitter {
+    sayHi(data) {
+        this.emit(eventName, data);
+    }
+}
 
-    console.log("Запись файла завершена. Содержимое файла:");
-    let data = fs.readFileSync("hello.txt", "utf8");
-    console.log(data);  // выводим считанные данные
+let user = new User();
+// добавляем к объекту user обработку события "greet"
+user.on(eventName, function(data){
+    console.log(data);
 });
+
+user.sayHi("Мне нужна твоя одежда...")
