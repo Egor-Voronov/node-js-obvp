@@ -1,11 +1,18 @@
-const http = require("http");
+function displaySync(callback){
+    callback();
+}
 
-let message = "привет мир";
-http.createServer(function(request,response){
+console.log("Начало работы программы");
 
-    console.log(message);
-    response.end(message);
+setTimeout(function(){
 
-}).listen(3000, "127.0.0.1",()=>{
-    console.log("Сервер начал прослушивание запросов");
-});
+    console.log("timeout 500");
+}, 500);
+
+setTimeout(function(){
+
+    console.log("timeout 100");
+}, 100);
+
+displaySync(function(){console.log("without timeout")});
+console.log("Завершение работы программы");
