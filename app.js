@@ -1,18 +1,11 @@
-function displaySync(callback){
-    callback();
-}
+const fs = require("fs");
 
-console.log("Начало работы программы");
+fs.appendFileSync("hello.txt", "Привет ми ми ми!");
 
-setTimeout(function(){
+fs.appendFile("hello.txt", "Привет МИД!", function(error){
+    if(error) throw error; // если возникла ошибка
 
-    console.log("timeout 500");
-}, 500);
-
-setTimeout(function(){
-
-    console.log("timeout 100");
-}, 100);
-
-displaySync(function(){console.log("without timeout")});
-console.log("Завершение работы программы");
+    console.log("Запись файла завершена. Содержимое файла:");
+    let data = fs.readFileSync("hello.txt", "utf8");
+    console.log(data);  // выводим считанные данные
+});
