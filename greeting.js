@@ -12,3 +12,5 @@ module.exports.getMessage = function (name) {
     else
         return "Доброе утро, " + name;
 }
+
+module.exports.name = "Alice";
