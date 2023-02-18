@@ -11,4 +11,4 @@ User.prototype.sayHi = function() {
     console.log(`Привет, меня зовут ${this.name}`);
 };
 
-module.exports = User;
+    module.exports = User;

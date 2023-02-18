@@ -1,4 +1,6 @@
-const welcome = require("./welcome");
+const greeting = require("./greeting");
 
-welcome.getMorningMessage();
-welcome.getEveningMessage();
+global.name = "Egor";
+
+global.console.log(date);
+console.log(greeting.getMessage());
