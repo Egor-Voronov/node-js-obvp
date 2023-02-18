@@ -1,5 +1,11 @@
-let name = process.argv[2];
-let age = process.argv[3];
+const http = require("http");
 
-console.log("name: " + name);
-console.log("age: " + age);
+let message = "привет мир";
+http.createServer(function(request,response){
+
+    console.log(message);
+    response.end(message);
+
+}).listen(3000, "127.0.0.1",()=>{
+    console.log("Сервер начал прослушивание запросов");
+});
